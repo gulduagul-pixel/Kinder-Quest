@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Stars | About Us - Kindergarten & Preschool</title>
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --sun-yellow: #ffde59;
+            --mint-green: #2ec4b6;
+            --sky-blue: #3a86ff;
+            --coral-pink: #ff5964;
+            --text-dark: #2b2d42;
+            --text-muted: #5c6370;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        body {
+            background-color: #fffdf9;
+            color: var(--text-dark);
+            min-height: 100vh;
+        }
+
+        /* Header / Navbar (Optimized Spacing for 100% Zoom) */
+        header {
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 3%; /* Reduced horizontal padding slightly to fit items comfortably */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .logo-badge {
+            width: 44px;
+            height: 44px;
+            background: #fff3d6;
+            border: 2px solid #ffca3a;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .logo-text h2 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .logo-text span {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #d97706;
+            letter-spacing: 0.5px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px; /* Optimized gap so items don't crowd */
+            align-items: center;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 0.88rem; /* Balanced font size */
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            border-radius: 30px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        header nav ul li a.active-tab {
+            background: #ffe8cc;
+            color: #c2410c;
+        }
+
+        header nav ul li a:hover {
+            color: #c2410c;
+        }
+
+        .nav-sub {
+            font-size: 0.7rem;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 2px 6px;
+            border-radius: 8px;
+            font-weight: 700;
+            margin-left: -2px;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .btn-visit {
+            background: #ecfdf5;
+            color: #059669;
+            border: 2px solid #a7f3d0;
+            padding: 8px 14px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .btn-visit:hover {
+            background: #d1fae5;
+        }
+
+        .btn-enroll {
+            background: linear-gradient(135deg, #ff7084, #ff5964);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(255, 89, 100, 0.3);
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .btn-enroll:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 89, 100, 0.4);
+        }
+
+        /* About Hero Section */
+        .about-hero {
+            padding: 70px 5% 50px 5%;
+            text-align: center;
+            background: #fffbf2;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-cloud {
+            position: absolute;
+            top: 30px;
+            left: 5%;
+            background: #ffffff;
+            width: 120px;
+            height: 50px;
+            border-radius: 50px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            opacity: 0.8;
+            z-index: 1;
+        }
+        .hero-cloud::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 25px;
+            background: #ffffff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .hero-sun {
+            position: absolute;
+            top: 40px;
+            right: 6%;
+            font-size: 3rem;
+            color: #ffb703;
+            animation: floatSun 4s ease-in-out infinite alternate;
+            z-index: 1;
+        }
+
+        @keyframes floatSun {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-8px) rotate(10deg); }
+        }
+
+        .section-title-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #fff7ed;
+            color: #c2410c;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            border: 2px dashed #ffedd5;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-hero h1 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 3.2rem;
+            color: var(--text-dark);
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-hero h1 .highlight-grow {
+            color: #ff5964;
+            background: #ffe3e5;
+            padding: 0 14px;
+            border-radius: 16px;
+            display: inline-block;
+            transform: rotate(-2deg);
+        }
+
+        .about-hero > p {
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Story Detail Section */
+        .story-section {
+            padding: 50px 5% 70px 5%;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .story-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            max-width: 1100px;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .story-image-box {
+            flex: 1;
+            min-width: 320px;
+            background: #ffffff;
+            border: 4px solid #fed7aa;
+            border-radius: 35px;
+            padding: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.04);
+            position: relative;
+        }
+
+        .story-image-inner {
+            background: #fdfaf6;
+            border-radius: 25px;
+            height: 320px;
+            overflow: hidden;
+            border: 2px dashed #bbf7d0;
+            position: relative;
+        }
+
+        .story-image-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-badge-tag {
+            position: absolute;
+            bottom: -15px;
+            left: 30px;
+            background: #ffffff;
+            border: 2px solid #fecaca;
+            color: #b91c1c;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .story-content {
+            flex: 1.2;
+            min-width: 300px;
+        }
+
+        .story-content h2 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2.3rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .story-content p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .story-stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .stat-box {
+            background: #fffdfa;
+            border: 2px solid #fed7aa;
+            padding: 15px 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .stat-box h4 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .stat-box span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Guiding Mission Section */
+        .mission-section {
+            padding: 60px 5%;
+            text-align: center;
+            background: #fffdf9;
+        }
+
+        .mission-section h2 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 40px;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .mission-card {
+    border-radius: 30px;
+    padding: 35px 30px;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+    border: 3px solid transparent;
+    transition: all 0.3s ease; /* Yeh line add karni hai */
+}
+    .mission-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0,0, 0.08);
+}
+
+        .mission-card.yellow {
+            background: #fffbeb;
+            border-color: #fde047;
+        }
+
+        .mission-card.pink {
+            background: #fff1f2;
+            border-color: #fecdd3;
+        }
+
+        .mission-card.green {
+            background: #f0fdf4;
+            border-color: #bbf7d0;
+        }
+
+        .mission-card-tag {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 12px;
+            background: white;
+        }
+
+        .mission-icon {
+            width: 55px;
+            height: 55px;
+            background: white;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .mission-card h3 {
+            font-size: 1.8rem;
+            font-family: 'Fredoka', sans-serif;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .mission-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Values We Live Every Day Section */
+        .values-section {
+            padding: 60px 5% 80px 5%;
+            text-align: center;
+            background: #ffffff;
+        }
+
+        .values-section h2 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .values-section > p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            font-size: 1rem;
+        }
+
+        /* Values Section Cards Styling */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Yeh sabhi 6 cards ko ek hi line me fix kar dega */
+    gap: 15px;                             /* Cards ke darmiyan spacing thodi kam kar di */
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding: 0 20px;
+}
+
+/* Responsive ke liye taake chote screens par aagey jaakar niche na giray */
+@media(max-width: 1100px) {
+    .values-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width: 768px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.value-card {
+    border-radius: 24px;
+    padding: 25px 15px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.06);
+}
+
+/* Individual Card Colors (jaise doosri image me hain) */
+.card-pink { background-color: #fff1f2; border-color: #fecdd3; }
+.card-pink .value-icon { background-color: #ff5964; color: white; }
+
+.card-peach { background-color: #fff7ed; border-color: #fed7aa; }
+.card-peach .value-icon { background-color: #ff8c42; color: white; }
+
+.card-yellow { background-color: #fefce8; border-color: #fef08a; }
+.card-yellow .value-icon { background-color: #facc15; color: #713f12; }
+
+.card-green { background-color: #f0fdf4; border-color: #bbf7d0; }
+.card-green .value-icon { background-color: #2ec4b6; color: white; }
+
+.card-blue { background-color: #f0f9ff; border-color: #bae6fd; }
+.card-blue .value-icon { background-color: #3a86ff; color: white; }
+
+.card-purple { background-color: #f5f3ff; border-color: #e9d5ff; }
+.card-purple .value-icon { background-color: #8b5cf6; color: white; }
+
+.value-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin: 0 auto 15px auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.value-card h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.2rem;
+    color: #2b2d42;
+    margin-bottom: 8px;
+}
+
+.value-card p {
+    color: #5c6370;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+        /* Footer Styles */
+        footer.site-footer {
+            background: #ffffff;
+            border-top: 3px solid #fef08a;
+            padding: 70px 5% 30px 5%;
+            color: var(--text-dark);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr 1.3fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-col p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-badge-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ecfdf5;
+            color: #059669;
+            border: 2px solid #a7f3d0;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links li a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links li a:hover {
+            color: #ff8c42;
+        }
+
+        .footer-contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .footer-contact-item i {
+            color: #ff8c42;
+            margin-top: 4px;
+        }
+
+        .footer-newsletter input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-family: 'Quicksand', sans-serif;
+            background: #f8fafc;
+            outline: none;
+            margin-bottom: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .footer-newsletter input:focus {
+            border-color: #ff8c42;
+            background: #ffffff;
+        }
+
+        .footer-newsletter button {
+            width: 100%;
+            background: linear-gradient(135deg, #ff7084, #ff5964);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(255, 89, 100, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .footer-newsletter button:hover {
+            transform: translateY(-2px);
+        }
+
+        .newsletter-note {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        .footer-bottom {
+            border-top: 2px solid #f1f5f9;
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-bottom-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .footer-bottom-links a:hover {
+            color: #ff8c42;
+        }
+
+        /* Responsive Breakpoint for Navbar */
+        @media(max-width: 1150px) {
+            header nav ul { display: none; }
+        }
+
+        @media(max-width: 1024px) {
+            .story-container { flex-direction: column; text-align: center; }
+            .story-stats-grid { justify-content: center; }
+            .mission-grid { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: 1fr 1fr; }
+            .hero-cloud, .hero-sun { display: none; }
+        }
+
+        @media(max-width: 650px) {
+            .footer-container { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+        /* MODAL POPUP OVERLAY CSS */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 680px;
+    border-radius: 28px;
+    border: 5px solid #a7f3d0;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    position: relative;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-overlay.active .modal-container {
+    transform: scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 15px;
+}
+
+.modal-badge-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.modal-teddy-icon {
+    width: 42px;
+    height: 42px;
+    background: #fff3d6;
+    border: 2px solid #ffca3a;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.modal-title-text span {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #059669;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: block;
+}
+
+.modal-title-text h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.35rem;
+    color: #2b2d42;
+    font-weight: 800;
+}
+
+.modal-close-btn {
+    width: 36px;
+    height: 36px;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #64748b;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.modal-close-btn:hover {
+    background: #fee2e2;
+    color: #ef4444;
+    border-color: #fca5a5;
+}
+
+.modal-banner-note {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    color: #166534;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.modal-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.modal-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.modal-form-group label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+}
+
+.modal-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    background: #f8fafc;
+    outline: none;
+    transition: 0.2s;
+}
+
+.modal-input:focus {
+    border-color: #10b981;
+    background: #fff;
+}
+
+.modal-footer-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+    border-top: 2px solid #f1f5f9;
+    padding-top: 15px;
+}
+
+.btn-modal-cancel {
+    background: #f1f5f9;
+    color: #475569;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-modal-cancel:hover { background: #e2e8f0; }
+
+.btn-modal-confirm {
+    background: #16a34a;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.2s;
+}
+
+.btn-modal-confirm:hover { background: #15803d; }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <a href="index.html" class="logo">
+            <div class="logo-badge">🏫</div>
+            <div class="logo-text">
+                <h2>Little Stars</h2>
+                <span>Kindergarten & Preschool</span>
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="about.html" class="active-tab"><i class="fa-solid fa-teddy-bear"></i> About Us</a></li>
+                <li><a href="courses.html"><i class="fa-solid fa-paintbrush"></i> Our Courses <span class="nav-sub">Ages 2-6</span></a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="contact.html" class="btn-visit" id="openModalBtn1" onclick="event.preventDefault(); openModal();"><i class="fa-solid fa-calendar-days"></i> Book a Visit</a>
+            <button class="btn-enroll" id="openEnrollModalBtn" onclick="event.preventDefault(); openEnrollModal();"><i class="fa-solid fa-heart"></i> Enroll Now</button>
+        </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="hero-cloud"></div>
+        <div class="hero-sun"><i class="fa-solid fa-face-smile"></i></div>
+
+        <div class="section-title-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Discover Little Stars</div>
+        <h1>A Little Place for <span class="highlight-grow">Big Dreams</span></h1>
+        <p>Founded with a passion for joyful early childhood, Little Stars is a warm preschool haven where curiosity is celebrated, friendships blossom, and every child discovers their unique sparkle.</p>
+    </section>
+
+    <!-- Story Detail Section -->
+    <section class="story-section">
+        <div class="story-container">
+            <div class="story-image-box">
+                <div class="story-image-inner">
+                    <img src="image1.2.jpg" alt="Colorful Building Blocks">
+                </div>
+                <div class="story-badge-tag">
+                    <i class="fa-solid fa-heart" style="color: #ef4444;"></i> 100% Certified Care
+                </div>
+            </div>
+            <div class="story-content">
+                <div class="section-title-badge"><i class="fa-solid fa-book-open"></i> Our Story & Heart</div>
+                <h2>Nurturing Wonder in Every Little Heart</h2>
+                <p>Little Stars began with a simple belief: <strong>childhood should be filled with wonder, play, and security</strong>. We created a school that feels like a natural extension of home—full of soft light, living plants, storybook corners, and gentle guidance.</p>
+                <p>We know that the ages between 2 and 6 are the most formative in human development. Our curriculum seamlessly blends tactile Montessori materials, Reggio Emilia self-expression, and phonics mastery so that every child builds emotional resilience and social happiness.</p>
+                
+                <div class="story-stats-grid">
+                    <div class="stat-box">
+                        <div style="font-size: 1.5rem;">⭐</div>
+                        <div>
+                            <h4>1:6 Max</h4>
+                            <span>Average Student-Teacher Ratio</span>
+                        </div>
+                    </div>
+                    <div class="stat-box">
+                        <div style="font-size: 1.5rem;">🌱</div>
+                        <div>
+                            <h4>100%</h4>
+                            <span>Safe, Organic & Sanitized</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guiding Mission Section -->
+    <section class="mission-section">
+        <div class="section-title-badge"><i class="fa-solid fa-bullseye"></i> Core Purpose</div>
+        <h2>Our Guiding Mission</h2>
+        
+        <div class="mission-grid">
+            <div class="mission-card yellow">
+                <span class="mission-card-tag" style="color: #ca8a04;">Academic Joy</span>
+                <div class="mission-icon">💡</div>
+                <h3>Learn</h3>
+                <p>Building strong foundations through fun, sensory play, phonics and exploratory discovery.</p>
+            </div>
+
+            <div class="mission-card pink">
+                <span class="mission-card-tag" style="color: #e11d48;">Emotional Safety</span>
+                <div class="mission-icon">❤️</div>
+                <h3>Care</h3>
+                <p>Creating a safe, loving, inclusive and hygienic environment where every toddler feels cherished.</p>
+            </div>
+
+            <div class="mission-card green">
+                <span class="mission-card-tag" style="color: #16a34a;">Holistic Growth</span>
+                <div class="mission-icon">✨</div>
+                <h3>Grow</h3>
+                <p>Helping children develop social empathy, resilience, physical agility, and creative confidence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values We Live Every Day -->
+    <section class="values-section">
+        <div class="section-title-badge"><i class="fa-solid fa-rainbow"></i> Heart & Character</div>
+        <h2>The Values We Live Every Day</h2>
+        <p>We guide children not only in numbers and letters, but in emotional warmth, kindness, and empathy.</p>
+        
+        <div class="values-grid">
+    <!-- Card 1: Kindness -->
+    <div class="value-card card-pink">
+        <div class="value-icon"><i class="fa-solid fa-heart"></i></div>
+        <h3>Kindness</h3>
+        <p>Caring for one another with warm hearts and gentle words.</p>
+    </div>
+
+    <!-- Card 2: Creativity -->
+    <div class="value-card card-peach">
+        <div class="value-icon"><i class="fa-solid fa-palette"></i></div>
+        <h3>Creativity</h3>
+        <p>Embracing every unique idea, messy painting, and imaginative song.</p>
+    </div>
+
+    <!-- Card 3: Curiosity -->
+    <div class="value-card card-yellow">
+        <div class="value-icon"><i class="fa-solid fa-star"></i></div>
+        <h3>Curiosity</h3>
+        <p>Asking big questions and discovering the wonders of the universe.</p>
+    </div>
+
+    <!-- Card 4: Confidence -->
+    <div class="value-card card-green">
+        <div class="value-icon"><i class="fa-solid fa-shield-heart"></i></div>
+        <h3>Confidence</h3>
+        <p>Encouraging every child to speak up, try new things, and smile.</p>
+    </div>
+
+    <!-- Card 5: Friendship -->
+    <div class="value-card card-blue">
+        <div class="value-icon"><i class="fa-solid fa-users"></i></div>
+        <h3>Friendship</h3>
+        <p>Building lifelong bonds, sharing toys, and laughing together.</p>
+    </div>
+
+    <!-- Card 6: Respect -->
+    <div class="value-card card-purple">
+        <div class="value-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
+        <h3>Respect</h3>
+        <p>Honoring diversity, nature, teachers, and individual pace.</p>
+    </div>
+</div>
+    </section>
+
+    <!-- Professional Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Col 1: About / Logo -->
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 15px;">
+                    <div class="logo-badge">🏫</div>
+                    <div class="logo-text">
+                        <h2>Little Stars</h2>
+                        <span>Preschool & Kindergarten</span>
+                    </div>
+                </div>
+                <p>Where little minds grow & big dreams begin! A joyful, loving, and safe early learning community for children ages 2 to 6.</p>
+                <div class="footer-badge-box">
+                    <i class="fa-solid fa-sparkles" style="color: #059669;"></i> Certified Reggio & Montessori Inspired
+                </div>
+            </div>
+
+            <!-- Col 2: Our Programs -->
+            <div class="footer-col">
+                <h3><i class="fa-solid fa-rainbow" style="color: #3b82f6;"></i> Our Programs</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fa-solid fa-circle" style="font-size: 6px; color: #3b82f6;"></i> Playgroup (Ages 2–3)</a></li>
+                    <li><a href="#"><i class="fa-solid fa-circle" style="font-size: 6px; color: #10b981;"></i> Nursery (Ages 3–4)</a></li>
+                    <li><a href="#"><i class="fa-solid fa-circle" style="font-size: 6px; color: #f59e0b;"></i> KG-1 Junior Kindergarten (Ages 4–5)</a></li>
+                    <li><a href="#"><i class="fa-solid fa-circle" style="font-size: 6px; color: #ec4899;"></i> KG-2 Senior Kindergarten (Ages 5–6)</a></li>
+                    <li><a href="contact.html" style="color: #d97706; font-weight: 700; margin-top: 5px;"><i class="fa-solid fa-wand-magic-sparkles"></i> Schedule a Private Campus Tour</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Campus Info -->
+            <div class="footer-col">
+                <h3><i class="fa-solid fa-location-dot" style="color: #ef4444;"></i> Campus Info</h3>
+                <div class="footer-contact-info">
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-map-pin"></i>
+                        <span>124 Sunshine Meadow Way, Blossom Hills, CA 90210</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>(555) 234-5678</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>hello@littlestars-kindergarten.org</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Mon – Fri: 8:00 AM – 5:30 PM</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Col 4: Parent Sparkles (Newsletter) -->
+            <div class="footer-col">
+                <h3><i class="fa-solid fa-envelope-open-text" style="color: #ff5964;"></i> Parent Sparkles</h3>
+                <p>Receive weekly Montessori craft guides, kid-friendly snack recipes, and kindergarten activity printables!</p>
+                <form class="footer-newsletter" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+                    <input type="email" placeholder="parent@email.com" required>
+                    <button type="submit"><i class="fa-solid fa-paper-plane"></i> Apply for 2026-2027</button>
+                </form>
+                <div class="newsletter-note"><i class="fa-solid fa-lock" style="font-size: 10px;"></i> We respect your privacy. No spam, ever.</div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom">
+            <div>&copy; 2026 Little Stars Kindergarten & Preschool. Crafted with <i class="fa-solid fa-heart" style="color: #ff5964;"></i> for growing smiles.</div>
+            <div class="footer-bottom-links">
+                <a href="#">Parent Handbook</a>
+                <a href="#">Safety & Security</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+        <!-- BOOK A VISIT MODAL POPUP -->
+<div class="modal-overlay" id="visitModal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <div class="modal-badge-title">
+                <div class="modal-teddy-icon">🧸</div>
+                <div class="modal-title-text">
+                    <span>Guided Family Tour</span>
+                    <h3>Book a School Visit! 🏫</h3>
+                </div>
+            </div>
+            <div class="modal-close-btn" id="closeModalBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+
+        <div class="modal-banner-note">
+            <i class="fa-solid fa-location-dot" style="color: #059669;"></i>
+            <span>Complimentary 45-minute private guided tour with student snack tasting!</span>
+        </div>
+
+        <form>
+            <div class="modal-form-grid">
+                <div class="modal-form-group">
+                    <label>Parent Name *</label>
+                    <input type="text" placeholder="Full name" class="modal-input" required>
+                </div>
+                <div class="modal-form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" placeholder="(555) 000-0000" class="modal-input" required>
+                </div>
+            </div>
+
+            <div class="modal-form-grid">
+                <div class="modal-form-group">
+                    <label>Email Address *</label>
+                    <input type="email" placeholder="name@email.com" class="modal-input" required>
+                </div>
+                <div class="modal-form-group">
+                    <label>Child's Approximate Age</label>
+                    <select class="modal-input">
+                        <option>3 years old (Nursery)</option>
+                        <option>2 years old (Playgroup)</option>
+                        <option>4 years old (KG-1)</option>
+                        <option>5 years old (KG-2)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="modal-form-grid">
+                <div class="modal-form-group">
+                    <label>Preferred Date *</label>
+                    <input type="date" class="modal-input" value="2026-08-25" required>
+                </div>
+                <div class="modal-form-group">
+                    <label>Time Slot *</label>
+                    <select class="modal-input">
+                        <option>09:30 AM (Class in session)</option>
+                        <option>11:00 AM (Morning Circle)</option>
+                        <option>02:00 PM (Afternoon Activities)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="modal-footer-actions">
+                <button type="button" class="btn-modal-cancel" id="cancelModalBtn">Cancel</button>
+                <button type="submit" class="btn-modal-confirm">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Confirm Tour Booking
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- ENROLL NOW MODAL POPUP -->
+<div class="modal-overlay" id="enrollModal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <div class="modal-badge-title">
+                <div class="modal-teddy-icon">🧸</div>
+                <div class="modal-title-text">
+                    <span style="color: #ff5964;">ADMISSIONS OPEN 2026-2027</span>
+                    <h3>Enroll Your Little Star! 🌟</h3>
+                </div>
+            </div>
+            <div class="modal-close-btn" id="closeEnrollModalBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+
+        <div class="modal-banner-note" style="background: #fff1f2; border-color: #fecdd3; color: #9f1239;">
+            <i class="fa-solid fa-wand-magic-sparkles" style="color: #ff5964;"></i>
+            <span>Fill out this quick form and our friendly admissions team will contact you with fee details and welcome kit!</span>
+        </div>
+
+        <form>
+            <div class="modal-form-grid">
+                <div class="modal-form-group">
+                    <label>Parent / Guardian Name *</label>
+                    <input type="text" placeholder="e.g. Jessica Miller" class="modal-input" required>
+                </div>
+                <div class="modal-form-group">
+                    <label>Child's Full Name *</label>
+                    <input type="text" placeholder="e.g. Leo Miller" class="modal-input" required>
+                </div>
+            </div>
+
+            <div class="modal-form-grid">
+                <div class="modal-form-group">
+                    <label>Email Address *</label>
+                    <input type="email" placeholder="jessica@example.com" class="modal-input" required>
+                </div>
+                <div class="modal-form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" placeholder="(555) 234-5678" class="modal-input" required>
+                </div>
+            </div>
+
+            <div class="modal-form-grid">
+                <div class="modal-form-group">
+                    <label>Select Program *</label>
+                    <select class="modal-input">
+                        <option>Nursery (3 – 4 Years)</option>
+                        <option>Playgroup (2 – 3 Years)</option>
+                        <option>KG-1 Junior Kindergarten (4 – 5 Years)</option>
+                        <option>KG-2 Senior Kindergarten (5 – 6 Years)</option>
+                    </select>
+                </div>
+                <div class="modal-form-group">
+                    <label>Desired Start Term</label>
+                    <select class="modal-input">
+                        <option>Select a term...</option>
+                        <option>Fall Term (September 2026)</option>
+                        <option>Winter Term (January 2027)</option>
+                        <option>Spring Term (April 2027)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="modal-form-group" style="margin-top: 15px;">
+                <label>Any specific allergies, preferences, or questions?</label>
+                <textarea class="modal-input" style="height: 80px; resize: none;" placeholder="Let us know if your child has food allergies or favorite activities..."></textarea>
+            </div>
+
+            <div class="modal-footer-actions">
+                <button type="button" class="btn-modal-cancel" id="cancelEnrollModalBtn">Cancel</button>
+                <button type="submit" class="btn-modal-confirm" style="background: linear-gradient(135deg, #ff7084, #ff5964); box-shadow: 0 4px 15px rgba(255, 89, 100, 0.3);">
+                    <i class="fa-solid fa-heart"></i> Submit Enrollment Application
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+    </footer>
+<script>
+    const modal = document.getElementById('visitModal');
+    const openBtn1 = document.getElementById('openModalBtn1');
+    const openBtn2 = document.getElementById('openModalBtn2');
+    const openBtn3 = document.getElementById('openModalBtn3');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const cancelBtn = document.getElementById('cancelModalBtn');
+
+    function openModal() {
+        if(modal) modal.classList.add('active');
+    }
+
+    function closeModal() {
+        if(modal) modal.classList.remove('active');
+    }
+
+    if(openBtn1) openBtn1.addEventListener('click', openModal);
+    if(openBtn2) openBtn2.addEventListener('click', openModal);
+    if(openBtn3) openBtn3.addEventListener('click', openModal);
+    
+    if(closeBtn) closeBtn.addEventListener('click', closeModal);
+    if(cancelBtn) cancelBtn.addEventListener('click', closeModal);
+
+    window.addEventListener('click', (e) => {
+        if(e.target === modal) {
+            closeModal();
+        }
+    });
+</script>
+<script>
+    // Enroll Modal Elements
+    const enrollModal = document.getElementById('enrollModal');
+    const openEnrollBtn = document.getElementById('openEnrollModalBtn');
+    const closeEnrollBtn = document.getElementById('closeEnrollModalBtn');
+    const cancelEnrollBtn = document.getElementById('cancelEnrollModalBtn');
+
+    function openEnrollModal() {
+        if(enrollModal) enrollModal.classList.add('active');
+    }
+
+    function closeEnrollModal() {
+        if(enrollModal) enrollModal.classList.remove('active');
+    }
+
+    if(openEnrollBtn) openEnrollBtn.addEventListener('click', openEnrollModal);
+    if(closeEnrollBtn) closeEnrollBtn.addEventListener('click', closeEnrollModal);
+    if(cancelEnrollBtn) cancelEnrollBtn.addEventListener('click', closeEnrollModal);
+
+    // Close when clicking outside the box
+    window.addEventListener('click', (e) => {
+        if(e.target === enrollModal) {
+            closeEnrollModal();
+        }
+    });
+</script>
+</body>
+</html>
