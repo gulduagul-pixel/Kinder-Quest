@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Little Stars | Kindergarten & Preschool</title>
@@ -1501,5 +1502,16 @@ header nav ul li a:hover {
         }
     });
 </script>
+<script>
+        // Supabase credentials (API section se copy karen)
+        const SUPABASE_URL = 'https://your-project-id.supabase.co';
+        const SUPABASE_ANON_KEY = 'sb_publishable_Sb6FS6Oz3XgD1EhUlmp8eQ_gv6Px2iU';
+
+        // Client initialize karen
+        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        // Connection verify karne ke liye test check
+        console.log("Supabase Client Loaded:", supabase);
+    </script>
 </body>
-</html>
+</html>     
