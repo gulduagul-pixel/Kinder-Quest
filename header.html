@@ -18,4 +18,82 @@
         <a href="contact.html" class="btn-visit" id="openModalBtn1" onclick="event.preventDefault(); openModal();"><i class="fa-solid fa-calendar-days"></i> Book a Visit</a>
        <button class="btn-enroll" id="openEnrollModalBtn" onclick="event.preventDefault(); openEnrollModal();"><i class="fa-solid fa-heart"></i> Enroll Now</button>
     </div>
+    <div class="modal-overlay" id="enrollModal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <div class="modal-badge-title">
+                <div class="modal-teddy-icon">🧸</div>
+                <div class="modal-title-text">
+                    <span style="color: #ff5964;">ADMISSIONS OPEN 2026-2027</span>
+                    <h3>Enroll Your Little Star! 🌟</h3>
+                </div>
+            </div>
+            <div class="modal-close-btn" id="closeEnrollModalBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+
+        <div class="modal-banner-note" style="background: #fff1f2; border-color: #fecdd3; color: #9f1239;">
+            <i class="fa-solid fa-wand-magic-sparkles" style="color: #ff5964;"></i>
+            <span>Fill out this quick form and our friendly admissions team will contact you with fee details and welcome kit!</span>
+        </div>
+
+        <form>
+            <div class="modal-form-grid">
+                <div class="modal-form-group">
+                    <label>Parent / Guardian Name *</label>
+                    <input type="text" placeholder="e.g. Jessica Miller" class="modal-input" required>
+                </div>
+                <div class="modal-form-group">
+                    <label>Child's Full Name *</label>
+                    <input type="text" placeholder="e.g. Leo Miller" class="modal-input" required>
+                </div>
+            </div>
+
+            <div class="modal-form-grid">
+                <div class="modal-form-group">
+                    <label>Email Address *</label>
+                    <input type="email" placeholder="jessica@example.com" class="modal-input" required>
+                </div>
+                <div class="modal-form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" placeholder="(555) 234-5678" class="modal-input" required>
+                </div>
+            </div>
+
+            <div class="modal-form-grid">
+                <div class="modal-form-group">
+                    <label>Select Program *</label>
+                    <select class="modal-input">
+                        <option>Nursery (3 – 4 Years)</option>
+                        <option>Playgroup (2 – 3 Years)</option>
+                        <option>KG-1 Junior Kindergarten (4 – 5 Years)</option>
+                        <option>KG-2 Senior Kindergarten (5 – 6 Years)</option>
+                    </select>
+                </div>
+                <div class="modal-form-group">
+                    <label>Desired Start Term</label>
+                    <select class="modal-input">
+                        <option>Select a term...</option>
+                        <option>Fall Term (September 2026)</option>
+                        <option>Winter Term (January 2027)</option>
+                        <option>Spring Term (April 2027)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="modal-form-group" style="margin-top: 15px;">
+                <label>Any specific allergies, preferences, or questions?</label>
+                <textarea class="modal-input" style="height: 80px; resize: none;" placeholder="Let us know if your child has food allergies or favorite activities..."></textarea>
+            </div>
+
+            <div class="modal-footer-actions">
+                <button type="button" class="btn-modal-cancel" id="cancelEnrollModalBtn">Cancel</button>
+                <button type="submit" class="btn-modal-confirm" style="background: linear-gradient(135deg, #ff7084, #ff5964); box-shadow: 0 4px 15px rgba(255, 89, 100, 0.3);">
+                    <i class="fa-solid fa-heart"></i> Submit Enrollment Application
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
 </header>
