@@ -352,5 +352,35 @@
             document.getElementById('footer-placeholder').innerHTML = data;
         });
 </script>
+<script>
+    // 1. Header aur Footer load karne ka code
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+            setActiveTab(); // Header load hone ke baad active tab function chalayein
+        });
+
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+
+    // 2. Current page ke mutabiq active-tab lagane ka function
+    function setActiveTab() {
+        const currentLocation = window.location.pathname;
+        const navLinks = document.querySelectorAll("header nav ul li a");
+        
+        navLinks.forEach(link => {
+            // Check karein ke link ka href current page ke naam se match kar raha hai ya nahi
+            if (currentLocation.includes(link.getAttribute('href'))) {
+                link.classList.add('active-tab');
+            } else {
+                link.classList.remove('active-tab');
+            }
+        });
+    }
+</script>
 </body>
 </html>     
