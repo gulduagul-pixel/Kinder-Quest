@@ -928,27 +928,7 @@
 <body>
 
     <!-- Header / Navbar -->
-    <header>
-        <a href="index.html" class="logo">
-            <div class="logo-badge">🏫</div>
-            <div class="logo-text">
-                <h2>Kinder Quest</h2>
-                <span>Kindergarten & Pre-School</span>
-            </div>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
-                <li><a href="about.html" class="active-tab"><i class="fa-solid fa-teddy-bear"></i> About Us</a></li>
-                <li><a href="courses.html"><i class="fa-solid fa-paintbrush"></i> Our Courses <span class="nav-sub">Ages 2-6</span></a></li>
-                <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact Us</a></li>
-            </ul>
-        </nav>
-        <div class="header-actions">
-            <a href="contact.html" class="btn-visit" id="openModalBtn1" onclick="event.preventDefault(); openModal();"><i class="fa-solid fa-calendar-days"></i> Book a Visit</a>
-            <button class="btn-enroll" id="openEnrollModalBtn" onclick="event.preventDefault(); openEnrollModal();"><i class="fa-solid fa-heart"></i> Enroll Now</button>
-        </div>
-    </header>
+    <div id="header-placeholder"></div>
 
     <!-- About Hero Section -->
     <section class="about-hero">
@@ -1078,232 +1058,7 @@
     </section>
 
     <!-- Professional Footer Section -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <!-- Col 1: About / Logo -->
-            <div class="footer-col">
-                <div class="logo" style="margin-bottom: 15px;">
-                    <div class="logo-badge">🏫</div>
-                    <div class="logo-text">
-                        <h2>Little Stars</h2>
-                        <span>Preschool & Kindergarten</span>
-                    </div>
-                </div>
-                <p>Where little minds grow & big dreams begin! A joyful, loving, and safe early learning community for children ages 2 to 6.</p>
-                <div class="footer-badge-box">
-                    <i class="fa-solid fa-sparkles" style="color: #059669;"></i> Certified Reggio & Montessori Inspired
-                </div>
-            </div>
-
-            <!-- Col 2: Our Programs -->
-            <div class="footer-col">
-                <h3><i class="fa-solid fa-rainbow" style="color: #3b82f6;"></i> Our Programs</h3>
-                <ul class="footer-links">
-                    <li><a href="#"><i class="fa-solid fa-circle" style="font-size: 6px; color: #3b82f6;"></i> Playgroup (Ages 2–3)</a></li>
-                    <li><a href="#"><i class="fa-solid fa-circle" style="font-size: 6px; color: #10b981;"></i> Nursery (Ages 3–4)</a></li>
-                    <li><a href="#"><i class="fa-solid fa-circle" style="font-size: 6px; color: #f59e0b;"></i> KG-1 Junior Kindergarten (Ages 4–5)</a></li>
-                    <li><a href="#"><i class="fa-solid fa-circle" style="font-size: 6px; color: #ec4899;"></i> KG-2 Senior Kindergarten (Ages 5–6)</a></li>
-                    <li><a href="contact.html" style="color: #d97706; font-weight: 700; margin-top: 5px;"><i class="fa-solid fa-wand-magic-sparkles"></i> Schedule a Private Campus Tour</a></li>
-                </ul>
-            </div>
-
-            <!-- Col 3: Campus Info -->
-            <div class="footer-col">
-                <h3><i class="fa-solid fa-location-dot" style="color: #ef4444;"></i> Campus Info</h3>
-                <div class="footer-contact-info">
-                    <div class="footer-contact-item">
-                        <i class="fa-solid fa-map-pin"></i>
-                        <span>124 Sunshine Meadow Way, Blossom Hills, CA 90210</span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>(555) 234-5678</span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fa-solid fa-envelope"></i>
-                        <span>hello@littlestars-kindergarten.org</span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fa-solid fa-clock"></i>
-                        <span>Mon – Fri: 8:00 AM – 5:30 PM</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Col 4: Parent Sparkles (Newsletter) -->
-            <div class="footer-col">
-                <h3><i class="fa-solid fa-envelope-open-text" style="color: #ff5964;"></i> Parent Sparkles</h3>
-                <p>Receive weekly Montessori craft guides, kid-friendly snack recipes, and kindergarten activity printables!</p>
-                <form class="footer-newsletter" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
-                    <input type="email" placeholder="parent@email.com" required>
-                    <button type="submit"><i class="fa-solid fa-paper-plane"></i> Apply for 2026-2027</button>
-                </form>
-                <div class="newsletter-note"><i class="fa-solid fa-lock" style="font-size: 10px;"></i> We respect your privacy. No spam, ever.</div>
-            </div>
-        </div>
-
-        <!-- Footer Bottom Bar -->
-        <div class="footer-bottom">
-            <div>&copy; 2026 Little Stars Kindergarten & Preschool. Crafted with <i class="fa-solid fa-heart" style="color: #ff5964;"></i> for growing smiles.</div>
-            <div class="footer-bottom-links">
-                <a href="#">Parent Handbook</a>
-                <a href="#">Safety & Security</a>
-                <a href="#">Privacy Policy</a>
-            </div>
-        </div>
-        <!-- BOOK A VISIT MODAL POPUP -->
-<div class="modal-overlay" id="visitModal">
-    <div class="modal-container">
-        <div class="modal-header">
-            <div class="modal-badge-title">
-                <div class="modal-teddy-icon">🧸</div>
-                <div class="modal-title-text">
-                    <span>Guided Family Tour</span>
-                    <h3>Book a School Visit! 🏫</h3>
-                </div>
-            </div>
-            <div class="modal-close-btn" id="closeModalBtn">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-        </div>
-
-        <div class="modal-banner-note">
-            <i class="fa-solid fa-location-dot" style="color: #059669;"></i>
-            <span>Complimentary 45-minute private guided tour with student snack tasting!</span>
-        </div>
-
-        <form>
-            <div class="modal-form-grid">
-                <div class="modal-form-group">
-                    <label>Parent Name *</label>
-                    <input type="text" placeholder="Full name" class="modal-input" required>
-                </div>
-                <div class="modal-form-group">
-                    <label>Phone Number *</label>
-                    <input type="tel" placeholder="(555) 000-0000" class="modal-input" required>
-                </div>
-            </div>
-
-            <div class="modal-form-grid">
-                <div class="modal-form-group">
-                    <label>Email Address *</label>
-                    <input type="email" placeholder="name@email.com" class="modal-input" required>
-                </div>
-                <div class="modal-form-group">
-                    <label>Child's Approximate Age</label>
-                    <select class="modal-input">
-                        <option>3 years old (Nursery)</option>
-                        <option>2 years old (Playgroup)</option>
-                        <option>4 years old (KG-1)</option>
-                        <option>5 years old (KG-2)</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="modal-form-grid">
-                <div class="modal-form-group">
-                    <label>Preferred Date *</label>
-                    <input type="date" class="modal-input" value="2026-08-25" required>
-                </div>
-                <div class="modal-form-group">
-                    <label>Time Slot *</label>
-                    <select class="modal-input">
-                        <option>09:30 AM (Class in session)</option>
-                        <option>11:00 AM (Morning Circle)</option>
-                        <option>02:00 PM (Afternoon Activities)</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="modal-footer-actions">
-                <button type="button" class="btn-modal-cancel" id="cancelModalBtn">Cancel</button>
-                <button type="submit" class="btn-modal-confirm">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i> Confirm Tour Booking
-                </button>
-            </div>
-        </form>
-    </div>
-</div>
-<!-- ENROLL NOW MODAL POPUP -->
-<div class="modal-overlay" id="enrollModal">
-    <div class="modal-container">
-        <div class="modal-header">
-            <div class="modal-badge-title">
-                <div class="modal-teddy-icon">🧸</div>
-                <div class="modal-title-text">
-                    <span style="color: #ff5964;">ADMISSIONS OPEN 2026-2027</span>
-                    <h3>Enroll Your Little Star! 🌟</h3>
-                </div>
-            </div>
-            <div class="modal-close-btn" id="closeEnrollModalBtn">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-        </div>
-
-        <div class="modal-banner-note" style="background: #fff1f2; border-color: #fecdd3; color: #9f1239;">
-            <i class="fa-solid fa-wand-magic-sparkles" style="color: #ff5964;"></i>
-            <span>Fill out this quick form and our friendly admissions team will contact you with fee details and welcome kit!</span>
-        </div>
-
-        <form>
-            <div class="modal-form-grid">
-                <div class="modal-form-group">
-                    <label>Parent / Guardian Name *</label>
-                    <input type="text" placeholder="e.g. Jessica Miller" class="modal-input" required>
-                </div>
-                <div class="modal-form-group">
-                    <label>Child's Full Name *</label>
-                    <input type="text" placeholder="e.g. Leo Miller" class="modal-input" required>
-                </div>
-            </div>
-
-            <div class="modal-form-grid">
-                <div class="modal-form-group">
-                    <label>Email Address *</label>
-                    <input type="email" placeholder="jessica@example.com" class="modal-input" required>
-                </div>
-                <div class="modal-form-group">
-                    <label>Phone Number *</label>
-                    <input type="tel" placeholder="(555) 234-5678" class="modal-input" required>
-                </div>
-            </div>
-
-            <div class="modal-form-grid">
-                <div class="modal-form-group">
-                    <label>Select Program *</label>
-                    <select class="modal-input">
-                        <option>Nursery (3 – 4 Years)</option>
-                        <option>Playgroup (2 – 3 Years)</option>
-                        <option>KG-1 Junior Kindergarten (4 – 5 Years)</option>
-                        <option>KG-2 Senior Kindergarten (5 – 6 Years)</option>
-                    </select>
-                </div>
-                <div class="modal-form-group">
-                    <label>Desired Start Term</label>
-                    <select class="modal-input">
-                        <option>Select a term...</option>
-                        <option>Fall Term (September 2026)</option>
-                        <option>Winter Term (January 2027)</option>
-                        <option>Spring Term (April 2027)</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="modal-form-group" style="margin-top: 15px;">
-                <label>Any specific allergies, preferences, or questions?</label>
-                <textarea class="modal-input" style="height: 80px; resize: none;" placeholder="Let us know if your child has food allergies or favorite activities..."></textarea>
-            </div>
-
-            <div class="modal-footer-actions">
-                <button type="button" class="btn-modal-cancel" id="cancelEnrollModalBtn">Cancel</button>
-                <button type="submit" class="btn-modal-confirm" style="background: linear-gradient(135deg, #ff7084, #ff5964); box-shadow: 0 4px 15px rgba(255, 89, 100, 0.3);">
-                    <i class="fa-solid fa-heart"></i> Submit Enrollment Application
-                </button>
-            </div>
-        </form>
-    </div>
-</div>
-    </footer>
+    <div id="footer-placeholder"></div>
 <script>
     const modal = document.getElementById('visitModal');
     const openBtn1 = document.getElementById('openModalBtn1');
@@ -1358,6 +1113,21 @@
             closeEnrollModal();
         }
     });
+</script>
+<script>
+    // Header load karne ke liye
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        });
+
+    // Footer load karne ke liye
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
 </script>
 </body>
 </html>
