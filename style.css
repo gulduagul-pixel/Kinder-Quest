@@ -3537,3 +3537,17 @@ header nav ul li a:hover {
 }
 
 .btn-modal-confirm:hover { background: #15803d; }
+
+/* Page load hote waqt smooth fade-in effect */
+body {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
