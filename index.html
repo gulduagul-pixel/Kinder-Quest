@@ -224,32 +224,6 @@
     });
 </script>
 <script>
-    // Enroll Modal Elements
-    const enrollModal = document.getElementById('enrollModal');
-    const openEnrollBtn = document.getElementById('openEnrollModalBtn');
-    const closeEnrollBtn = document.getElementById('closeEnrollModalBtn');
-    const cancelEnrollBtn = document.getElementById('cancelEnrollModalBtn');
-
-    function openEnrollModal() {
-        if(enrollModal) enrollModal.classList.add('active');
-    }
-
-    function closeEnrollModal() {
-        if(enrollModal) enrollModal.classList.remove('active');
-    }
-
-    if(openEnrollBtn) openEnrollBtn.addEventListener('click', openEnrollModal);
-    if(closeEnrollBtn) closeEnrollBtn.addEventListener('click', closeEnrollModal);
-    if(cancelEnrollBtn) cancelEnrollBtn.addEventListener('click', closeEnrollModal);
-
-    // Close when clicking outside the box
-    window.addEventListener('click', (e) => {
-        if(e.target === enrollModal) {
-            closeEnrollModal();
-        }
-    });
-</script>
-<script>
         // Supabase credentials (API section se copy karen)
         const SUPABASE_URL = 'https://your-project-id.supabase.co';
         const SUPABASE_ANON_KEY = 'sb_publishable_Sb6FS6Oz3XgD1EhUlmp8eQ_gv6Px2iU';
