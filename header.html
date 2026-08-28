@@ -1,140 +1,142 @@
-<header>
-    <a href="index.html" class="logo">
-        <div class="logo-badge">🏫</div>
-        <div class="logo-text">
-            <h2>Kinder Quest</h2>
-            <span>Kindergarten & Pre-School</span>
-        </div>
-    </a>
-    <nav>
-        <ul>
-            <li><a href="index.html" class="active-tab"><i class="fa-solid fa-house"></i> Home</a></li>
-            <li><a href="about.html"><i class="fa-solid fa-teddy-bear"></i> About Us</a></li>
-            <li><a href="courses.html"><i class="fa-solid fa-paintbrush"></i> Our Courses <span class="nav-sub">Ages 2-6</span></a></li>
-            <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact Us</a></li>
-        </ul>
-    </nav>
-    <div class="header-actions">
-        <a href="contact.html" class="btn-visit" id="openModalBtn1"><i class="fa-solid fa-calendar-days"></i> Book a Visit</a>
-        <button class="btn-enroll" id="openEnrollModalBtn"><i class="fa-solid fa-heart"></i> Enroll Now</button>
-    </div>
-
-    <!-- ENROLL NOW MODAL -->
-    <div class="modal-overlay" id="enrollModal">
-        <div class="modal-container">
-            <div class="modal-header">
-                <div class="modal-badge-title">
-                    <div class="modal-teddy-icon">🧸</div>
-                    <div class="modal-title-text">
-                        <span style="color: #ff5964;">ADMISSIONS OPEN 2026-2027</span>
-                        <h3>Enroll Your Little Star! 🌟</h3>
-                    </div>
-                </div>
-                <div class="modal-close-btn" id="closeEnrollModalBtn">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
+<!-- Professional Header / Navigation Bar -->
+<header class="site-header">
+    <div class="header-container">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+            <div class="logo-badge">⭐</div>
+            <div class="logo-text">
+                <h2>Little Stars</h2>
+                <span>Kindergarten & Preschool</span>
             </div>
+        </a>
 
-            <div class="modal-banner-note" style="background: #fff1f2; border-color: #fecdd3; color: #9f1239;">
-                <i class="fa-solid fa-wand-magic-sparkles" style="color: #ff5964;"></i>
-                <span>Fill out this quick form and our friendly admissions team will contact you with fee details and welcome kit!</span>
-            </div>
+        <!-- Navigation Links -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="courses.html">Our Courses</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
-            <form>
-                <div class="modal-form-grid">
-                    <div class="modal-form-group">
-                        <label>Parent / Guardian Name *</label>
-                        <input type="text" placeholder="e.g. Jessica Miller" class="modal-input" required>
-                    </div>
-                    <div class="modal-form-group">
-                        <label>Child's Full Name *</label>
-                        <input type="text" placeholder="e.g. Leo Miller" class="modal-input" required>
-                    </div>
-                </div>
-
-                <div class="modal-form-grid">
-                    <div class="modal-form-group">
-                        <label>Email Address *</label>
-                        <input type="email" placeholder="jessica@example.com" class="modal-input" required>
-                    </div>
-                    <div class="modal-form-group">
-                        <label>Phone Number *</label>
-                        <input type="tel" placeholder="(555) 234-5678" class="modal-input" required>
-                    </div>
-                </div>
-
-                <div class="modal-form-grid">
-                    <div class="modal-form-group">
-                        <label>Select Program *</label>
-                        <select class="modal-input">
-                            <option>Nursery (3 – 4 Years)</option>
-                            <option>Playgroup (2 – 3 Years)</option>
-                            <option>KG-1 Junior Kindergarten (4 – 5 Years)</option>
-                            <option>KG-2 Senior Kindergarten (5 – 6 Years)</option>
-                        </select>
-                    </div>
-                    <div class="modal-form-group">
-                        <label>Desired Start Term</label>
-                        <select class="modal-input">
-                            <option>Select a term...</option>
-                            <option>Fall Term (September 2026)</option>
-                            <option>Winter Term (January 2027)</option>
-                            <option>Spring Term (April 2027)</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="modal-form-group" style="margin-top: 15px;">
-                    <label>Any specific allergies, preferences, or questions?</label>
-                    <textarea class="modal-input" style="height: 80px; resize: none;" placeholder="Let us know if your child has food allergies or favorite activities..."></textarea>
-                </div>
-
-                <div class="modal-footer-actions">
-                    <button type="button" class="btn-modal-cancel" id="cancelEnrollModalBtn">Cancel</button>
-                    <button type="submit" class="btn-modal-confirm" style="background: linear-gradient(135deg, #ff7084, #ff5964); box-shadow: 0 4px 15px rgba(255, 89, 100, 0.3);">
-                        <i class="fa-solid fa-heart"></i> Submit Enrollment Application
-                    </button>
-                </div>
-            </form>
+        <!-- Header Action Buttons -->
+        <div class="header-actions">
+            <button class="btn-visit" id="openVisitModalBtn">
+                <i class="fa-solid fa-calendar-days"></i> Book a Visit
+            </button>
+            <button class="btn-enroll" id="openEnrollModalBtn">
+                <i class="fa-solid fa-heart"></i> Enroll Now
+            </button>
         </div>
     </div>
-
-    <!-- GLOBAL SCRIPT FOR MODALS & ACTIVE TAB -->
-    <script>
-        document.addEventListener('click', function(e) {
-            // Open Visit Modal
-            if (e.target.closest('#openModalBtn1') || e.target.closest('#openModalBtn2') || e.target.closest('#openModalBtn3')) {
-                e.preventDefault();
-                const visitModal = document.getElementById('visitModal');
-                if (visitModal) visitModal.classList.add('active');
-            }
-
-            // Open Enroll Modal
-            if (e.target.closest('#openEnrollModalBtn') || e.target.closest('#openEnrollModalBtn2')) {
-                e.preventDefault();
-                const enrollModal = document.getElementById('enrollModal');
-                if (enrollModal) enrollModal.classList.add('active');
-            }
-
-            // Close Enroll Modal
-            if (e.target.closest('#closeEnrollModalBtn') || e.target.closest('#cancelEnrollModalBtn')) {
-                const enrollModal = document.getElementById('enrollModal');
-                if (enrollModal) enrollModal.classList.remove('active');
-            }
-
-            // Close Visit Modal
-            if (e.target.closest('#closeModalBtn') || e.target.closest('#cancelModalBtn')) {
-                const visitModal = document.getElementById('visitModal');
-                if (visitModal) visitModal.classList.remove('active');
-            }
-        });
-
-        // Close when clicking outside modal overlays
-        window.addEventListener('click', (e) => {
-            const enrollModal = document.getElementById('enrollModal');
-            const visitModal = document.getElementById('visitModal');
-            if (e.target === enrollModal) enrollModal.classList.remove('active');
-            if (e.target === visitModal) visitModal.classList.remove('active');
-        });
-    </script>
 </header>
+
+<!-- BOOK A VISIT MODAL (Global for all pages) -->
+<div class="modal-overlay" id="visitModal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <div class="modal-badge-title">
+                <div class="modal-teddy-icon">🧸</div>
+                <div class="modal-title-text">
+                    <span>GUIDED FAMILY TOUR</span>
+                    <h3>Book a School Visit! 🏫</h3>
+                </div>
+            </div>
+            <div class="modal-close-btn" id="closeVisitModalBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
+
+        <div class="modal-banner-note">
+            <i class="fa-solid fa-location-dot"></i> Complimentary 45-minute private guided tour with student snack tasting!
+        </div>
+
+        <form class="modal-form" onsubmit="event.preventDefault(); alert('Tour booked successfully!');">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Parent Name *</label>
+                    <div class="input-with-icon">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Full name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <div class="input-with-icon">
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="tel" placeholder="(555) 000-0000" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <div class="input-with-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="name@email.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Child's Approximate Age</label>
+                    <div class="input-with-icon">
+                        <i class="fa-solid fa-child"></i>
+                        <select>
+                            <option>3 years old (Nursery)</option>
+                            <option>2 years old (Playgroup)</option>
+                            <option>4 years old (KG-1)</option>
+                            <option>5 years old (KG-2)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Preferred Date *</label>
+                    <div class="input-with-icon">
+                        <i class="fa-solid fa-calendar"></i>
+                        <input type="date" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Time Slot *</label>
+                    <div class="input-with-icon">
+                        <i class="fa-solid fa-clock"></i>
+                        <select>
+                            <option>09:30 AM (Class in session)</option>
+                            <option>11:00 AM (Storytime hour)</option>
+                            <option>03:30 PM (Afternoon playtime)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer-actions">
+                <button type="button" class="btn-modal-cancel" id="cancelVisitModalBtn">Cancel</button>
+                <button type="submit" class="btn-modal-confirm">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Confirm Tour Booking
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Global Script to handle header buttons dynamically since header is fetched -->
+<script>
+    document.addEventListener('click', function(e) {
+        // Open Visit Modal
+        if (e.target.closest('#openVisitModalBtn')) {
+            const visitModal = document.getElementById('visitModal');
+            if (visitModal) visitModal.classList.add('active');
+        }
+        // Close Visit Modal
+        if (e.target.closest('#closeVisitModalBtn') || e.target.closest('#cancelVisitModalBtn') || e.target.matches('#visitModal')) {
+            const visitModal = document.getElementById('visitModal');
+            if (visitModal && (e.target === visitModal || e.target.closest('#closeVisitModalBtn') || e.target.closest('#cancelVisitModalBtn'))) {
+                visitModal.classList.remove('active');
+            }
+        }
+    });
+</script>
