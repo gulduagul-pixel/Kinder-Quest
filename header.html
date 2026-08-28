@@ -123,15 +123,19 @@
     </div>
 </div>
 
-<!-- Global Script to handle header buttons dynamically since header is fetched -->
 <script>
+    // Yeh script ensure kare gi ke kisi bhi page par header ka button click ho toh modal khul jaye
     document.addEventListener('click', function(e) {
-        // Open Visit Modal
-        if (e.target.closest('#openVisitModalBtn')) {
+        const visitBtn = e.target.closest('#openVisitModalBtn');
+        if (visitBtn) {
+            e.preventDefault(); // Page redirect ya link khulne se rokne ke liye
             const visitModal = document.getElementById('visitModal');
-            if (visitModal) visitModal.classList.add('active');
+            if (visitModal) {
+                visitModal.classList.add('active');
+            }
         }
-        // Close Visit Modal
+
+        // Close Modal Handler
         if (e.target.closest('#closeVisitModalBtn') || e.target.closest('#cancelVisitModalBtn') || e.target.matches('#visitModal')) {
             const visitModal = document.getElementById('visitModal');
             if (visitModal && (e.target === visitModal || e.target.closest('#closeVisitModalBtn') || e.target.closest('#cancelVisitModalBtn'))) {
