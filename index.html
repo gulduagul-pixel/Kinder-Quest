@@ -13,7 +13,7 @@
 </head>
 <body>
     <!-- Header / Navbar -->
-   <div id="header-placeholder"></div>
+    <div id="header-placeholder"></div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -22,7 +22,7 @@
             <h1>Where Little Minds <span class="highlight-grow">Grow</span> & Big Dreams Begin!</h1>
             <p>A happy, safe and creative learning environment where children learn, play, explore and grow together.</p>
             <div class="hero-buttons">
-                <a href="index.html" class="btn-explore">Explore Our Courses <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="courses.html" class="btn-explore">Explore Our Courses <i class="fa-solid fa-arrow-right"></i></a>
                 <a href="contact.html" class="btn-contact-outline">Contact Us</a>
             </div>
         </div>
@@ -172,12 +172,11 @@
             </form>
         </div>
     </section>
-<!-- ENROLL NOW MODAL POPUP -->
 
     <!-- Professional Footer Section -->
     <div id="footer-placeholder"></div>
 
-    <!-- JavaScript for Tab Switching -->
+    <!-- JavaScript Files -->
     <script>
         function openTab(evt, tabName) {
             let tabContent = document.getElementsByClassName("tab-content");
@@ -195,89 +194,37 @@
         }
     </script>
     <script>
-    const modal = document.getElementById('visitModal');
-    const openBtn1 = document.getElementById('openModalBtn1');
-    const openBtn2 = document.getElementById('openModalBtn2');
-    const openBtn3 = document.getElementById('openModalBtn3');
-    const closeBtn = document.getElementById('closeModalBtn');
-    const cancelBtn = document.getElementById('cancelModalBtn');
-
-    function openModal() {
-        if(modal) modal.classList.add('active');
-    }
-
-    function closeModal() {
-        if(modal) modal.classList.remove('active');
-    }
-
-    if(openBtn1) openBtn1.addEventListener('click', openModal);
-    if(openBtn2) openBtn2.addEventListener('click', openModal);
-    if(openBtn3) openBtn3.addEventListener('click', openModal);
-    
-    if(closeBtn) closeBtn.addEventListener('click', closeModal);
-    if(cancelBtn) cancelBtn.addEventListener('click', closeModal);
-
-    window.addEventListener('click', (e) => {
-        if(e.target === modal) {
-            closeModal();
-        }
-    });
-</script>
-<script>
-        // Supabase credentials (API section se copy karen)
+        // Supabase configuration
         const SUPABASE_URL = 'https://your-project-id.supabase.co';
         const SUPABASE_ANON_KEY = 'sb_publishable_Sb6FS6Oz3XgD1EhUlmp8eQ_gv6Px2iU';
-
-        // Client initialize karen
         const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-        // Connection verify karne ke liye test check
-        console.log("Supabase Client Loaded:", supabase);
     </script>
     <script>
-    // Header load karne ke liye
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-        });
+        // Header & Footer loader + Active Tab Setter
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                setActiveTab();
+            });
 
-    // Footer load karne ke liye
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        });
-</script>
-<script>
-    // 1. Header aur Footer load karne ka code
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-            setActiveTab(); // Header load hone ke baad active tab function chalayein
-        });
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
 
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        });
-
-    // 2. Current page ke mutabiq active-tab lagane ka function
-    function setActiveTab() {
-        const currentLocation = window.location.pathname;
-        const navLinks = document.querySelectorAll("header nav ul li a");
-        
-        navLinks.forEach(link => {
-            // Check karein ke link ka href current page ke naam se match kar raha hai ya nahi
-            if (currentLocation.includes(link.getAttribute('href'))) {
-                link.classList.add('active-tab');
-            } else {
-                link.classList.remove('active-tab');
-            }
-        });
-    }
-</script>
+        function setActiveTab() {
+            const currentLocation = window.location.pathname;
+            const navLinks = document.querySelectorAll("header nav ul li a");
+            navLinks.forEach(link => {
+                if (currentLocation.includes(link.getAttribute('href'))) {
+                    link.classList.add('active-tab');
+                } else {
+                    link.classList.remove('active-tab');
+                }
+            });
+        }
+    </script>
 </body>
-</html>     
+</html>

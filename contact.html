@@ -13,7 +13,7 @@
 <body>
 
     <!-- Header / Navigation Bar -->
-   <div id="header-placeholder"></div>
+    <div id="header-placeholder"></div>
 
     <!-- Contact Hero Section -->
     <section class="contact-hero">
@@ -26,8 +26,6 @@
 
     <!-- 4 Info Cards Grid -->
     <div class="info-cards-container">
-        
-        <!-- Card 2: Phone Number -->
         <div class="info-card blue">
             <div class="info-icon-box" style="color: #3b82f6;"><i class="fa-solid fa-phone"></i></div>
             <h3>Phone Number</h3>
@@ -37,7 +35,6 @@
             </div>
         </div>
 
-        <!-- Card 3: Email Address -->
         <div class="info-card green">
             <div class="info-icon-box" style="color: #10b981;"><i class="fa-solid fa-envelope"></i></div>
             <h3>Email Address</h3>
@@ -47,7 +44,6 @@
             </div>
         </div>
 
-        <!-- Card 4: Timings -->
         <div class="info-card purple">
             <div class="info-icon-box" style="color: #a855f7;"><i class="fa-solid fa-clock"></i></div>
             <h3>School Timings</h3>
@@ -56,19 +52,15 @@
                 <i class="fa-solid fa-mug-hot"></i> Extended care available
             </div>
         </div>
-
     </div>
 
-   <!-- Contact Form & FAQ Section -->
+    <!-- Contact Form & FAQ Section -->
     <div class="form-faq-section">
-        
-        <!-- Left: Contact Form -->
         <div class="contact-form-box">
             <div class="box-title-area">
                 <h2><i class="fa-solid fa-pen-to-square" style="color: #ff5964;"></i> Send Us a Friendly Message</h2>
                 <p>Fill in the details below and we will get right back to you!</p>
             </div>
-        
             <form>
                 <div class="form-grid">
                     <div class="form-group">
@@ -113,14 +105,13 @@
             </form>
         </div>
 
-        <!-- Right: FAQ Section -->
+        <!-- FAQ Section -->
         <div class="faq-box">
             <div class="box-title-area">
                 <h2>Frequently Asked Questions <i class="fa-regular fa-lightbulb" style="color: #f59e0b;"></i></h2>
                 <p>Quick Parent Answers</p>
             </div>
 
-            <!-- FAQ Item 1 -->
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>What is the student-to-teacher ratio at Little Stars?</span>
@@ -131,7 +122,6 @@
                 </div>
             </div>
 
-            <!-- FAQ Item 2 -->
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>Are meals and snacks provided by the school?</span>
@@ -142,7 +132,6 @@
                 </div>
             </div>
 
-            <!-- FAQ Item 3 -->
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>What security and safety measures are in place?</span>
@@ -153,7 +142,6 @@
                 </div>
             </div>
 
-            <!-- FAQ Item 4 -->
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFaq(this)">
                     <span>Can parents schedule a visit before enrolling?</span>
@@ -163,8 +151,8 @@
                     Absolutely! You can use our "Book a Visit" tab above or contact us directly to schedule a guided tour of our classrooms and play areas.
                 </div>
             </div>
-        </div> <!-- End of .faq-box -->
-    </div> <!-- End of .form-faq-section -->
+        </div>
+    </div>
 
     <!-- Phone Support Bar -->
     <div class="phone-support-bar">
@@ -181,12 +169,12 @@
             <p>Experience the laughter, meet our friendly teachers, and let your child explore our cozy learning nooks.</p>
             <div class="visit-btn-group">
                 <button class="btn-green-tour" id="openModalBtn2"><i class="fa-solid fa-calendar-days"></i> Book a School Visit</button>
-                <a href="#" class="btn-outline-enroll" id="openEnrollModalBtn2" onclick="event.preventDefault(); openEnrollModal();"><i class="fa-solid fa-heart" style="color: #ff5964;"></i> Enroll Your Child</a>
+                <button class="btn-outline-enroll" id="openEnrollModalBtn2"><i class="fa-solid fa-heart" style="color: #ff5964;"></i> Enroll Your Child</button>
             </div>
         </div>
     </div>
 
-    <!-- BOOK A VISIT MODAL POPUP (Exact 1st Picture Design) -->
+    <!-- BOOK A VISIT MODAL POPUP -->
     <div class="modal-overlay" id="visitModal">
         <div class="modal-container">
             <div class="modal-header">
@@ -261,125 +249,47 @@
     </div>
 
     <!-- Footer Section -->
-   <div id="footer-placeholder"></div>
+    <div id="footer-placeholder"></div>
 
-    <!-- JavaScript to Handle Modal Open/Close -->
     <script>
-        const modal = document.getElementById('visitModal');
-        const openBtn1 = document.getElementById('openModalBtn1');
-        const openBtn2 = document.getElementById('openModalBtn2');
-        const openBtn3 = document.getElementById('openModalBtn3');
-        const closeBtn = document.getElementById('closeModalBtn');
-        const cancelBtn = document.getElementById('cancelModalBtn');
-
-        function openModal() {
-            modal.classList.add('active');
-        }
-
-        function closeModal() {
-            modal.classList.remove('active');
-        }
-
-        if(openBtn1) openBtn1.addEventListener('click', openModal);
-        if(openBtn2) openBtn2.addEventListener('click', openModal);
-        if(openBtn3) openBtn3.addEventListener('click', openModal);
-        
-        if(closeBtn) closeBtn.addEventListener('click', closeModal);
-        if(cancelBtn) cancelBtn.addEventListener('click', closeModal);
-
-        // Close modal when clicking outside the box
-        window.addEventListener('click', (e) => {
-            if(e.target === modal) {
-                closeModal();
-            }
-        });
-    </script>
-<script>
-    const enrollModal = document.getElementById('enrollModal');
-    const openEnrollBtn = document.getElementById('openEnrollModalBtn'); // Navbar wala button
-    const closeEnrollBtn = document.getElementById('closeEnrollModalBtn');
-    const cancelEnrollBtn = document.getElementById('cancelEnrollModalBtn');
-
-    function openEnrollModal() {
-        if(enrollModal) enrollModal.classList.add('active');
-    }
-
-    function closeEnrollModal() {
-        if(enrollModal) enrollModal.classList.remove('active');
-    }
-
-    if(openEnrollBtn) openEnrollBtn.addEventListener('click', openEnrollModal);
-    
-    // Agar aapne neechay wale button par bhi class ya id laga di hai, toh wo direct onclick="openEnrollModal()" se bhi chal jayega!
-
-    if(closeEnrollBtn) closeEnrollBtn.addEventListener('click', closeEnrollModal);
-    if(cancelEnrollBtn) cancelEnrollBtn.addEventListener('click', closeEnrollModal);
-
-    window.addEventListener('click', (e) => {
-        if(e.target === enrollModal) {
-            closeEnrollModal();
-        }
-    });
-</script>
-<script>
-    function toggleFaq(element) {
-        const parentItem = element.parentElement;
-        parentItem.classList.toggle('active');
-        
-        const icon = element.querySelector('i');
-        if (parentItem.classList.contains('active')) {
-            icon.classList.remove('fa-plus');
-            icon.classList.add('fa-minus');
-        } else {
-            icon.classList.remove('fa-minus');
-            icon.classList.add('fa-plus');
-        }
-    }
-</script>
-<script>
-    // Header load karne ke liye
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-        });
-
-    // Footer load karne ke liye
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        });
-</script>
-<script>
-    // 1. Header aur Footer load karne ka code
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-            setActiveTab(); // Header load hone ke baad active tab function chalayein
-        });
-
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        });
-
-    // 2. Current page ke mutabiq active-tab lagane ka function
-    function setActiveTab() {
-        const currentLocation = window.location.pathname;
-        const navLinks = document.querySelectorAll("header nav ul li a");
-        
-        navLinks.forEach(link => {
-            // Check karein ke link ka href current page ke naam se match kar raha hai ya nahi
-            if (currentLocation.includes(link.getAttribute('href'))) {
-                link.classList.add('active-tab');
+        function toggleFaq(element) {
+            const parentItem = element.parentElement;
+            parentItem.classList.toggle('active');
+            const icon = element.querySelector('i');
+            if (parentItem.classList.contains('active')) {
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
             } else {
-                link.classList.remove('active-tab');
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
             }
-        });
-    }
-</script>
+        }
+    </script>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                setActiveTab();
+            });
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+
+        function setActiveTab() {
+            const currentLocation = window.location.pathname;
+            const navLinks = document.querySelectorAll("header nav ul li a");
+            navLinks.forEach(link => {
+                if (currentLocation.includes(link.getAttribute('href'))) {
+                    link.classList.add('active-tab');
+                } else {
+                    link.classList.remove('active-tab');
+                }
+            });
+        }
+    </script>
 </body>
 </html>

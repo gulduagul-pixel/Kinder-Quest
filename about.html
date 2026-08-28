@@ -19,7 +19,6 @@
     <section class="about-hero">
         <div class="hero-cloud"></div>
         <div class="hero-sun"><i class="fa-solid fa-face-smile"></i></div>
-
         <div class="section-title-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Discover Little Stars</div>
         <h1>A Little Place for <span class="highlight-grow">Big Dreams</span></h1>
         <p>Founded with a passion for joyful early childhood, Little Stars is a warm preschool haven where curiosity is celebrated, friendships blossom, and every child discovers their unique sparkle.</p>
@@ -66,7 +65,6 @@
     <section class="mission-section">
         <div class="section-title-badge"><i class="fa-solid fa-bullseye"></i> Core Purpose</div>
         <h2>Our Guiding Mission</h2>
-        
         <div class="mission-grid">
             <div class="mission-card yellow">
                 <span class="mission-card-tag" style="color: #ca8a04;">Academic Joy</span>
@@ -74,14 +72,12 @@
                 <h3>Learn</h3>
                 <p>Building strong foundations through fun, sensory play, phonics and exploratory discovery.</p>
             </div>
-
             <div class="mission-card pink">
                 <span class="mission-card-tag" style="color: #e11d48;">Emotional Safety</span>
                 <div class="mission-icon">❤️</div>
                 <h3>Care</h3>
                 <p>Creating a safe, loving, inclusive and hygienic environment where every toddler feels cherished.</p>
             </div>
-
             <div class="mission-card green">
                 <span class="mission-card-tag" style="color: #16a34a;">Holistic Growth</span>
                 <div class="mission-icon">✨</div>
@@ -96,153 +92,68 @@
         <div class="section-title-badge"><i class="fa-solid fa-rainbow"></i> Heart & Character</div>
         <h2>The Values We Live Every Day</h2>
         <p>We guide children not only in numbers and letters, but in emotional warmth, kindness, and empathy.</p>
-        
         <div class="values-grid">
-    <!-- Card 1: Kindness -->
-    <div class="value-card card-pink">
-        <div class="value-icon"><i class="fa-solid fa-heart"></i></div>
-        <h3>Kindness</h3>
-        <p>Caring for one another with warm hearts and gentle words.</p>
-    </div>
-
-    <!-- Card 2: Creativity -->
-    <div class="value-card card-peach">
-        <div class="value-icon"><i class="fa-solid fa-palette"></i></div>
-        <h3>Creativity</h3>
-        <p>Embracing every unique idea, messy painting, and imaginative song.</p>
-    </div>
-
-    <!-- Card 3: Curiosity -->
-    <div class="value-card card-yellow">
-        <div class="value-icon"><i class="fa-solid fa-star"></i></div>
-        <h3>Curiosity</h3>
-        <p>Asking big questions and discovering the wonders of the universe.</p>
-    </div>
-
-    <!-- Card 4: Confidence -->
-    <div class="value-card card-green">
-        <div class="value-icon"><i class="fa-solid fa-shield-heart"></i></div>
-        <h3>Confidence</h3>
-        <p>Encouraging every child to speak up, try new things, and smile.</p>
-    </div>
-
-    <!-- Card 5: Friendship -->
-    <div class="value-card card-blue">
-        <div class="value-icon"><i class="fa-solid fa-users"></i></div>
-        <h3>Friendship</h3>
-        <p>Building lifelong bonds, sharing toys, and laughing together.</p>
-    </div>
-
-    <!-- Card 6: Respect -->
-    <div class="value-card card-purple">
-        <div class="value-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
-        <h3>Respect</h3>
-        <p>Honoring diversity, nature, teachers, and individual pace.</p>
-    </div>
-</div>
+            <div class="value-card card-pink">
+                <div class="value-icon"><i class="fa-solid fa-heart"></i></div>
+                <h3>Kindness</h3>
+                <p>Caring for one another with warm hearts and gentle words.</p>
+            </div>
+            <div class="value-card card-peach">
+                <div class="value-icon"><i class="fa-solid fa-palette"></i></div>
+                <h3>Creativity</h3>
+                <p>Embracing every unique idea, messy painting, and imaginative song.</p>
+            </div>
+            <div class="value-card card-yellow">
+                <div class="value-icon"><i class="fa-solid fa-star"></i></div>
+                <h3>Curiosity</h3>
+                <p>Asking big questions and discovering the wonders of the universe.</p>
+            </div>
+            <div class="value-card card-green">
+                <div class="value-icon"><i class="fa-solid fa-shield-heart"></i></div>
+                <h3>Confidence</h3>
+                <p>Encouraging every child to speak up, try new things, and smile.</p>
+            </div>
+            <div class="value-card card-blue">
+                <div class="value-icon"><i class="fa-solid fa-users"></i></div>
+                <h3>Friendship</h3>
+                <p>Building lifelong bonds, sharing toys, and laughing together.</p>
+            </div>
+            <div class="value-card card-purple">
+                <div class="value-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
+                <h3>Respect</h3>
+                <p>Honoring diversity, nature, teachers, and individual pace.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Professional Footer Section -->
     <div id="footer-placeholder"></div>
-<script>
-    const modal = document.getElementById('visitModal');
-    const openBtn1 = document.getElementById('openModalBtn1');
-    const openBtn2 = document.getElementById('openModalBtn2');
-    const openBtn3 = document.getElementById('openModalBtn3');
-    const closeBtn = document.getElementById('closeModalBtn');
-    const cancelBtn = document.getElementById('cancelModalBtn');
 
-    function openModal() {
-        if(modal) modal.classList.add('active');
-    }
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                setActiveTab();
+            });
 
-    function closeModal() {
-        if(modal) modal.classList.remove('active');
-    }
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
 
-    if(openBtn1) openBtn1.addEventListener('click', openModal);
-    if(openBtn2) openBtn2.addEventListener('click', openModal);
-    if(openBtn3) openBtn3.addEventListener('click', openModal);
-    
-    if(closeBtn) closeBtn.addEventListener('click', closeModal);
-    if(cancelBtn) cancelBtn.addEventListener('click', closeModal);
-
-    window.addEventListener('click', (e) => {
-        if(e.target === modal) {
-            closeModal();
+        function setActiveTab() {
+            const currentLocation = window.location.pathname;
+            const navLinks = document.querySelectorAll("header nav ul li a");
+            navLinks.forEach(link => {
+                if (currentLocation.includes(link.getAttribute('href'))) {
+                    link.classList.add('active-tab');
+                } else {
+                    link.classList.remove('active-tab');
+                }
+            });
         }
-    });
-</script>
-<script>
-    // Enroll Modal Elements
-    const enrollModal = document.getElementById('enrollModal');
-    const openEnrollBtn = document.getElementById('openEnrollModalBtn');
-    const closeEnrollBtn = document.getElementById('closeEnrollModalBtn');
-    const cancelEnrollBtn = document.getElementById('cancelEnrollModalBtn');
-
-    function openEnrollModal() {
-        if(enrollModal) enrollModal.classList.add('active');
-    }
-
-    function closeEnrollModal() {
-        if(enrollModal) enrollModal.classList.remove('active');
-    }
-
-    if(openEnrollBtn) openEnrollBtn.addEventListener('click', openEnrollModal);
-    if(closeEnrollBtn) closeEnrollBtn.addEventListener('click', closeEnrollModal);
-    if(cancelEnrollBtn) cancelEnrollBtn.addEventListener('click', closeEnrollModal);
-
-    // Close when clicking outside the box
-    window.addEventListener('click', (e) => {
-        if(e.target === enrollModal) {
-            closeEnrollModal();
-        }
-    });
-</script>
-<script>
-    // Header load karne ke liye
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-        });
-
-    // Footer load karne ke liye
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        });
-</script>
-<script>
-    // 1. Header aur Footer load karne ka code
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-            setActiveTab(); // Header load hone ke baad active tab function chalayein
-        });
-
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        });
-
-    // 2. Current page ke mutabiq active-tab lagane ka function
-    function setActiveTab() {
-        const currentLocation = window.location.pathname;
-        const navLinks = document.querySelectorAll("header nav ul li a");
-        
-        navLinks.forEach(link => {
-            // Check karein ke link ka href current page ke naam se match kar raha hai ya nahi
-            if (currentLocation.includes(link.getAttribute('href'))) {
-                link.classList.add('active-tab');
-            } else {
-                link.classList.remove('active-tab');
-            }
-        });
-    }
-</script>
+    </script>
 </body>
 </html>
