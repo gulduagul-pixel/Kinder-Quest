@@ -253,9 +253,10 @@
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Agar aap chahti hain ke box bara ho aur picture ka aik bhi hissa na kate, toh object-fit ko 'contain' kar dein aur background white rakh lein: */
+/* Sab 4 cards (Playgroup, Nursery, KG-1, KG-2) ki images ko box fully cover karengi, taake koi corner gap na bache */
 .stage-card .card-img-top {
-    object-fit: contain; 
+    object-fit: cover; 
+    object-position: center;
     background-color: #fffdf9; /* Card ke background match karne ke liye */
 }
 
