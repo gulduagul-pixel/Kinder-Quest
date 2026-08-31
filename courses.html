@@ -1074,7 +1074,7 @@
         </div>
 
     </div>
-    <!-- Weekly Learning Timetable Section -->
+    <!-- Timetable Section -->
 <section class="timetable-section">
     <div class="timetable-container">
         
@@ -1093,12 +1093,13 @@
             <button class="day-btn" onclick="switchDay('friday', this)">Friday</button>
         </div>
 
-        <!-- Timetable Content Card (Popup Animation Wrapper) -->
+        <!-- Timetable Content Card -->
         <div class="timetable-card-wrapper" id="timetableCard">
-            <!-- Content dynamically JS se change hoga -->
+            <!-- Yeh jagah JavaScript handle karegi -->
         </div>
 
     </div>
+</section>
 </section>
 <!-- Exact Index Footer Section -->
     <footer class="site-footer">
@@ -1615,8 +1616,6 @@
         if(e.target === kg1Modal) closeKg1Modal();
         if(e.target === kg2Modal) closeKg2Modal();
     });
-</script>
-// Din ka data (Days content database)
 const timetableData = {
     monday: {
         focus: "MONDAY SPECIAL FOCUS",
@@ -1665,23 +1664,18 @@ const timetableData = {
     }
 };
 
-// Function jo buttons click hone par data change karegi aur popup animation trigger karegi
 function switchDay(day, btnElement) {
-    // 1. Active button style shift karna
     const buttons = document.querySelectorAll('.day-btn');
     buttons.forEach(btn => btn.classList.remove('active'));
     btnElement.classList.add('active');
 
-    // 2. Data fetch karna
     const data = timetableData[day];
     const cardWrapper = document.getElementById('timetableCard');
 
-    // 3. Animation reset karne ke liye thora trick (re-trigger animation)
     cardWrapper.style.animation = 'none';
-    cardWrapper.offsetHeight; // trigger reflow
+    cardWrapper.offsetHeight; 
     cardWrapper.style.animation = null;
 
-    // 4. HTML insert karna
     let scheduleHTML = '';
     data.schedule.forEach(item => {
         scheduleHTML += `
@@ -1710,12 +1704,13 @@ function switchDay(day, btnElement) {
     `;
 }
 
-// Page load hote hi default Monday ka data show ho jaye
+// Page load hote hi default Monday show ho jaye
 window.addEventListener('DOMContentLoaded', () => {
     const defaultBtn = document.querySelector('.day-btn');
     if(defaultBtn) {
         switchDay('monday', defaultBtn);
     }
 });
+</Script>
 </body>
 </html>
