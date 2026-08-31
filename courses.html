@@ -243,14 +243,24 @@
         .stage-card.green { background-color: #f0fdf4; border-color: #bbf7d0; }
         .stage-card.blue { background-color: #f0f9ff; border-color: #bae6fd; }
         .stage-card.purple { background-color: #f5f3ff; border-color: #e9d5ff; }
-
-       .card-img-top {
+.card-img-top {
     width: 100%;
-    height: 260px; /* Pehle shayad 180px ya 200px hogi, isay bara kar ke 260px ya 280px kar dein */
-    object-fit: cover; /* Taake picture kharab na ho aur box me fit ho jaye */
+    height: 330px; /* Isay barha kar 330px ya 340px kar diya hai taake box bara ho jaye */
+    object-fit: cover; /* Agar poori screen par box me fit rakhna hai */
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Agar aap chahti hain ke box bara ho aur picture ka aik bhi hissa na kate, toh object-fit ko 'contain' kar dein aur background white rakh lein: */
+.stage-card .card-img-top {
+    object-fit: contain; 
+    background-color: #fffdf9; /* Card ke background match karne ke liye */
+}
+
+/* Hover Zoom Effect */
+.stage-card:hover .card-img-top {
+    transform: scale(1.05);
 }
 
 /* Jab bhi stage-card par hover ho tou picture zoom ho jaye */
