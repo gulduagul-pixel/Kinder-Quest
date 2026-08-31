@@ -368,6 +368,171 @@
         @media(max-width: 900px) {
             .stages-container { grid-template-columns: 1fr; }
         }
+        /* Timetable Section Styling */
+.timetable-section {
+    padding: 60px 20px;
+    background-color: #fffdf9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.timetable-container {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.timetable-header .routine-badge {
+    background: #e6f4ea;
+    color: #137333;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.timetable-header h2 {
+    font-size: 2.2rem;
+    color: #202124;
+    margin-bottom: 10px;
+}
+
+.timetable-header p {
+    color: #5f6368;
+    font-size: 1rem;
+    margin-bottom: 35px;
+}
+
+/* Day Tabs Styling */
+.day-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.day-btn {
+    padding: 12px 28px;
+    border: 2px solid #e8eaed;
+    background-color: #ffffff;
+    color: #3c4043;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.day-btn:hover {
+    border-color: #ff5964;
+    color: #ff5964;
+}
+
+.day-btn.active {
+    background-color: #ff5964;
+    border-color: #ff5964;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(255, 89, 100, 0.4);
+}
+
+/* Timetable Card with Popup/Zoom Animation */
+.timetable-card-wrapper {
+    background: #ffffff;
+    border: 2px solid #fce8e6;
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: left;
+    animation: popupAnimation 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popupAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.92) translateY(15px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.card-top-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.focus-tag {
+    background: #fff1f2;
+    color: #ff5964;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-top-info h3 {
+    font-size: 1.6rem;
+    color: #202124;
+    margin-top: 8px;
+}
+
+.sparkle-icon {
+    font-size: 1.5rem;
+}
+
+/* Schedule Rows */
+.schedule-row {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 15px 20px;
+    border-radius: 14px;
+    margin-bottom: 15px;
+    border-left: 4px solid #ff5964;
+}
+
+.time-badge {
+    background: #fff8e1;
+    color: #f57c00;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 8px;
+    min-width: 90px;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.schedule-details h4 {
+    font-size: 1.05rem;
+    color: #202124;
+    margin-bottom: 3px;
+}
+
+.schedule-details p {
+    font-size: 0.88rem;
+    color: #5f6368;
+    margin: 0;
+}
+
+.session-type {
+    margin-left: auto;
+    background: #e6f4ea;
+    color: #137333;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
         /* Exact Index Footer CSS */
         .site-footer {
             background: #ffffff;
@@ -909,6 +1074,32 @@
         </div>
 
     </div>
+    <!-- Weekly Learning Timetable Section -->
+<section class="timetable-section">
+    <div class="timetable-container">
+        
+        <div class="timetable-header">
+            <span class="routine-badge"><i class="fa-solid fa-calendar-days"></i> WEEKLY ROUTINE</span>
+            <h2>Weekly Learning Timetable 📅</h2>
+            <p>Each day of the week features a special sensory or STEM exploration theme to keep little minds constantly inspired!</p>
+        </div>
+
+        <!-- Day Selection Buttons -->
+        <div class="day-tabs">
+            <button class="day-btn active" onclick="switchDay('monday', this)">Monday</button>
+            <button class="day-btn" onclick="switchDay('tuesday', this)">Tuesday</button>
+            <button class="day-btn" onclick="switchDay('wednesday', this)">Wednesday</button>
+            <button class="day-btn" onclick="switchDay('thursday', this)">Thursday</button>
+            <button class="day-btn" onclick="switchDay('friday', this)">Friday</button>
+        </div>
+
+        <!-- Timetable Content Card (Popup Animation Wrapper) -->
+        <div class="timetable-card-wrapper" id="timetableCard">
+            <!-- Content dynamically JS se change hoga -->
+        </div>
+
+    </div>
+</section>
 <!-- Exact Index Footer Section -->
     <footer class="site-footer">
         <div class="footer-content">
@@ -1425,5 +1616,106 @@
         if(e.target === kg2Modal) closeKg2Modal();
     });
 </script>
+// Din ka data (Days content database)
+const timetableData = {
+    monday: {
+        focus: "MONDAY SPECIAL FOCUS",
+        title: "Rainbow Art & Craft 🎨",
+        schedule: [
+            { time: "09:00 AM", title: "Color Theory & Finger Painting", desc: "Mixing primary colors to create magical rainbow shades", type: "Guided Hands-on" },
+            { time: "10:30 AM", title: "Tactile Clay Modeling", desc: "Sculpting friendly zoo animals and geometric shapes", type: "Guided Hands-on" },
+            { time: "12:00 PM", title: "Gallery Walk & Story Sharing", desc: "Presenting masterpieces to proud classmates", type: "Guided Hands-on" }
+        ]
+    },
+    tuesday: {
+        focus: "TUESDAY SPECIAL FOCUS",
+        title: "Little STEM Explorers 🔬",
+        schedule: [
+            { time: "09:00 AM", title: "Magnetic Force Discovery", desc: "Testing objects to see what sticks and what floats", type: "Interactive Lab" },
+            { time: "10:30 AM", title: "Counting Blocks & Patterns", desc: "Building towers using logic and sequence matching", type: "Math Fun" },
+            { time: "12:00 PM", title: "Nature Walk & Leaf Sorting", desc: "Collecting textures and observing plants outdoors", type: "Outdoor Activity" }
+        ]
+    },
+    wednesday: {
+        focus: "WEDNESDAY SPECIAL FOCUS",
+        title: "Music, Rhyme & Motion 🎵",
+        schedule: [
+            { time: "09:00 AM", title: "Rhythm & Percussion Circle", desc: "Exploring beats with drums, shakers, and tambourines", type: "Auditory Play" },
+            { time: "10:30 AM", title: "Story Drama & Role Play", desc: "Acting out classic fairy tales with costume props", type: "Creative Drama" },
+            { time: "12:00 PM", title: "Gross Motor Balance Track", desc: "Navigating soft obstacle courses for coordination", type: "Physical Gym" }
+        ]
+    },
+    thursday: {
+        focus: "THURSDAY SPECIAL FOCUS",
+        title: "Little Chef & Sensory Kitchen 🍎",
+        schedule: [
+            { time: "09:00 AM", title: "No-Bake Fruit Skewers", desc: "Learning colors, counting, and healthy snack prep", type: "Nutritious Fun" },
+            { time: "10:30 AM", title: "Sensory Rice & Bean Dig", desc: "Finding hidden treasure toys in tactile bins", type: "Sensory Play" },
+            { time: "12:00 PM", title: "Table Manners & Sharing", desc: "Practicing group dining etiquette politely", type: "Social Skills" }
+        ]
+    },
+    friday: {
+        focus: "FRIDAY SPECIAL FOCUS",
+        title: "Outdoor Eco-Adventures 🌿",
+        schedule: [
+            { time: "09:00 AM", title: "Gardening & Plant Care", desc: "Watering flowers and planting sunflower seeds", type: "Eco Science" },
+            { time: "10:30 AM", title: "Parachute & Team Games", desc: "Cooperative group games fostering friendship", type: "Team Building" },
+            { time: "12:00 PM", title: "Weekly Star Celebration", desc: "Distributing achievement badges and stickers", type: "Award Ceremony" }
+        ]
+    }
+};
+
+// Function jo buttons click hone par data change karegi aur popup animation trigger karegi
+function switchDay(day, btnElement) {
+    // 1. Active button style shift karna
+    const buttons = document.querySelectorAll('.day-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    btnElement.classList.add('active');
+
+    // 2. Data fetch karna
+    const data = timetableData[day];
+    const cardWrapper = document.getElementById('timetableCard');
+
+    // 3. Animation reset karne ke liye thora trick (re-trigger animation)
+    cardWrapper.style.animation = 'none';
+    cardWrapper.offsetHeight; // trigger reflow
+    cardWrapper.style.animation = null;
+
+    // 4. HTML insert karna
+    let scheduleHTML = '';
+    data.schedule.forEach(item => {
+        scheduleHTML += `
+            <div class="schedule-row">
+                <div class="time-badge">${item.time}</div>
+                <div class="schedule-details">
+                    <h4>${item.title}</h4>
+                    <p>${item.desc}</p>
+                </div>
+                <div class="session-type">${item.type}</div>
+            </div>
+        `;
+    });
+
+    cardWrapper.innerHTML = `
+        <div class="card-top-info">
+            <div>
+                <span class="focus-tag">${data.focus}</span>
+                <h3>${data.title}</h3>
+            </div>
+            <div class="sparkle-icon">🌟</div>
+        </div>
+        <div class="schedule-list">
+            ${scheduleHTML}
+        </div>
+    `;
+}
+
+// Page load hote hi default Monday ka data show ho jaye
+window.addEventListener('DOMContentLoaded', () => {
+    const defaultBtn = document.querySelector('.day-btn');
+    if(defaultBtn) {
+        switchDay('monday', defaultBtn);
+    }
+});
 </body>
 </html>
