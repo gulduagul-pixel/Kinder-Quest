@@ -890,6 +890,153 @@
             .footer-content { grid-template-columns: 1fr; gap: 30px; }
             .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
         }
+        /* Contact Section Main Layout */
+.contact-main-section {
+    padding: 50px 20px;
+    background-color: #fffdf9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contact-grid-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Form thora bara, side info thori compact */
+    gap: 30px;
+    align-items: start;
+}
+
+/* Form Box Styling */
+.contact-form-box {
+    background: #ffffff;
+    border: 2px solid #fce8e6;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #3c4043;
+    margin-bottom: 6px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e8eaed;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus {
+    border-color: #ff5964;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #ff7084, #ff5964);
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(255, 89, 100, 0.3);
+    transition: transform 0.2s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Right Side Info Cards */
+.contact-side-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.side-card {
+    background: #ffffff;
+    border: 2px solid #e8eaed;
+    padding: 22px;
+    border-radius: 20px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.side-card:hover {
+    border-color: #ff5964;
+    transform: translateY(-3px);
+}
+
+.side-card-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.side-card h4 {
+    font-size: 1.05rem;
+    color: #202124;
+    margin-bottom: 4px;
+}
+
+.side-card p {
+    font-size: 0.85rem;
+    color: #5f6368;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.highlight-text {
+    display: block;
+    font-weight: 700;
+    color: #ff5964;
+    font-size: 0.95rem;
+}
+
+.sub-text {
+    display: block;
+    font-size: 0.78rem;
+    color: #80868b;
+}
+
+.side-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.side-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .contact-grid-container {
+        grid-template-columns: 1fr;
+    }
+}
     </style>
 </head>
 <body>
@@ -961,59 +1108,76 @@
 
     </div>
 
-    <!-- Contact Form & FAQ Section -->
-    <div class="form-faq-section">
+    <section class="contact-main-section">
+    <div class="contact-grid-container">
         
-        <!-- Left: Contact Form -->
+        <!-- Left Side: Contact Form (Aapka purana form yahan aayega) -->
         <div class="contact-form-box">
-            <div class="box-title-area">
-                <h2><i class="fa-solid fa-pen-to-square" style="color: #ff5964;"></i> Send Us a Friendly Message</h2>
-                <p>Fill in the details below and we will get right back to you!</p>
-            </div>
-        
+            <h2>Get in Touch with Us 💌</h2>
+            <p>Have questions about admissions or curriculum? Drop us a message!</p>
+            <!-- Form fields yahan rahengi -->
             <form>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label><i class="fa-regular fa-user" style="color: #ff5964;"></i> Parent Name *</label>
-                        <input type="text" placeholder="e.g. Jessica Thompson" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fa-regular fa-heart" style="color: #ff5964;"></i> Child Name & Age *</label>
-                        <input type="text" placeholder="e.g. Toby (Age 3.5)" class="form-control" required>
-                    </div>
-                </div>
-
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label><i class="fa-regular fa-envelope" style="color: #3b82f6;"></i> Email Address *</label>
-                        <input type="email" placeholder="jessica@example.com" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fa-solid fa-phone" style="color: #10b981;"></i> Phone Number *</label>
-                        <input type="tel" placeholder="(555) 234-5678" class="form-control" required>
-                    </div>
-                </div>
-
                 <div class="form-group">
-                    <label><i class="fa-solid fa-book-open" style="color: #d97706;"></i> Program of Interest *</label>
-                    <select class="form-control">
-                        <option>Nursery (3 – 4 Years)</option>
-                        <option>Playgroup (2 – 3 Years)</option>
-                        <option>KG-1 Junior Kindergarten (4 – 5 Years)</option>
-                        <option>KG-2 Senior Kindergarten (5 – 6 Years)</option>
-                    </select>
+                    <label>Your Name *</label>
+                    <input type="text" placeholder="e.g. Sarah Miller" class="form-input" required>
                 </div>
-
                 <div class="form-group">
-                    <label><i class="fa-regular fa-comment-dots" style="color: #a855f7;"></i> Your Message or Questions</label>
-                    <textarea class="form-control" placeholder="Tell us about your child, questions regarding routines, diet, tuition fees..."></textarea>
+                    <label>Email Address *</label>
+                    <input type="email" placeholder="sarah@example.com" class="form-input" required>
                 </div>
-
-                <button type="submit" class="btn-submit">
-                    <i class="fa-solid fa-paper-plane"></i> Send Message
-                </button>
+                <div class="form-group">
+                    <label>Your Message or Questions</label>
+                    <textarea class="form-input" style="height: 100px; resize: none;" placeholder="Tell us about your child, questions regarding routines, diet, tuition fees..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
             </form>
         </div>
+
+        <!-- Right Side: Khali jagah ko bharnay ke liye Quick Info Cards -->
+        <div class="contact-side-info">
+            
+            <!-- Card 1: Phone / Principal Support -->
+            <div class="side-card phone-card">
+                <div class="side-card-icon" style="background: #e6f4ea; color: #137333;">
+                    <i class="fa-solid fa-phone-volume"></i>
+                </div>
+                <div>
+                    <h4>Direct Principal Helpline</h4>
+                    <p>Prefer to speak on the phone? Call our principal directly.</p>
+                    <span class="highlight-text">(555) 234-5678</span>
+                    <span class="sub-text">Mon – Fri, 8:00 AM – 5:00 PM</span>
+                </div>
+            </div>
+
+            <!-- Card 2: Quick Visit Hours -->
+            <div class="side-card time-card">
+                <div class="side-card-icon" style="background: #fff8e1; color: #f57c00;">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+                <div>
+                    <h4>Visiting Hours</h4>
+                    <p>Parents are welcome to visit our campus during operational hours.</p>
+                    <span class="highlight-text">8:30 AM – 4:00 PM</span>
+                    <span class="sub-text">Saturday tours available by appointment</span>
+                </div>
+            </div>
+
+            <!-- Card 3: Quick FAQ Banner -->
+            <div class="side-card faq-card">
+                <div class="side-card-icon" style="background: #e8f0fe; color: #1a73e8;">
+                    <i class="fa-solid fa-circle-question"></i>
+                </div>
+                <div>
+                    <h4>Looking for quick answers?</h4>
+                    <p>Check out our curriculum details or age groups in the courses section before applying.</p>
+                    <a href="courses.html" class="side-link">Explore Courses & Routine →</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
 
         <!-- Right: FAQ Section -->
         <div class="faq-box">
