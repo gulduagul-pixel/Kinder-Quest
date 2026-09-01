@@ -1016,6 +1016,28 @@ header nav ul li a:hover {
 }
 
 .btn-modal-confirm:hover { background: #15803d; }
+/* Image container ya box ki styling agar pehle se nahi hai */
+.feature-image-box {
+    width: 100%;
+    max-width: 500px; /* Box ki width apni marzi se adjust kar sakti hain */
+    height: 350px;   /* Height ko 1449x1086 ke ratio ke mutabiq set kiya hai */
+    border-radius: 16px;
+    overflow: hidden; /* Taake image corners se bahar na nikle */
+}
+
+/* Image ki exact styling */
+.feature-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Yeh image ko box me poora fit kar dega */
+    border-radius: 16px;
+    transition: transform 0.5s ease; /* Pyara sa zoom effect */
+}
+
+/* Jab cursor image par aaye tou halka sa zoom ho */
+.feature-image-box:hover .feature-img {
+    transform: scale(1.05);
+}
     </style>
 </head>
 <body>
@@ -1133,7 +1155,9 @@ header nav ul li a:hover {
                     <p>Through open-ended art, dramatic roleplay, musical percussion, and sensory materials, children discover original ways to express their thoughts, solve challenges, and build creative confidence.</p>
                     <div class="feature-footer-tag"><i class="fa-solid fa-check" style="color: #10b981;"></i> Encourages out-of-the-box thinking & craft mastery</div>
                 </div>
-                <div class="tab-pane-graphic">🎨</div>
+                <div class="tab-pane-graphic">
+    <img src="Images/Creative.png" alt="Creativity and Art" class="feature-img">
+</div>
             </div>
         </div>
 
@@ -1145,7 +1169,9 @@ header nav ul li a:hover {
                     <p>We introduce letters, numbers, puzzles, and scientific inquiry through interactive games and friendly challenges that transform everyday curiosity into lifelong academic passion.</p>
                     <div class="feature-footer-tag"><i class="fa-solid fa-check" style="color: #10b981;"></i> Interactive puzzles, counting games & phonetic fun</div>
                 </div>
-                <div class="tab-pane-graphic">🚀</div>
+                <div class="tab-pane-graphic">
+    <img src="images/learning.png" alt="Creativity and Art" class="feature-img">
+</div>
             </div>
         </div>
 
@@ -1157,7 +1183,9 @@ header nav ul li a:hover {
                     <p>Group projects, collaborative games, and guided sharing circles help children build empathy, resolve peer conflicts gracefully, and communicate their feelings with confidence.</p>
                     <div class="feature-footer-tag"><i class="fa-solid fa-check" style="color: #10b981;"></i> Cultivates kindness, teamwork & active listening</div>
                 </div>
-                <div class="tab-pane-graphic">🤝</div>
+                <div class="tab-pane-graphic">
+    <img src="images/social skills.png" alt="Creativity and Art" class="feature-img">
+</div>
             </div>
         </div>
     </section>
